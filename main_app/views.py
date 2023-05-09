@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
-from .models import Continent
+from .models import Continent, Country 
 from .forms import CountryForm
+from .forms import CityForm 
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 
@@ -29,6 +30,7 @@ def continents_index(request):
      "continents": continents  
     } 
 )
+
 def continents_detail(request, continent_id):
     continent = Continent.objects.get(id=continent_id)
     country_form = CountryForm()
@@ -36,6 +38,7 @@ def continents_detail(request, continent_id):
         "continent": continent,
         "country_form": country_form 
     })
+
 def add_country(request, continent_id):
     form = CountryForm(request.POST)
     if form.is_valid():
@@ -49,6 +52,24 @@ def countries_index(request):
      "countries": countries  
     } 
 )
+
+def countries_detail(request, continent_id, country_id):
+    country = Country.objects.get(id=country_id)
+    city_form = CityForm()
+    return render(request, 'countries/detail.html', {
+        "country": country,
+        "city_form": city_form 
+    })
+
+def add_city(request, country_id, continent_id):
+    form = CityForm(request.POST)
+    if form.is_valid():
+      new_city = form.save(commit=False)
+      new_city.country_id = country_id
+      new_city.save()
+    return redirect("detail", country_id = country_id)
+
+
 def cities_index(request):
     return render(request, 'cities/index.html',{
      "cities": cities  
