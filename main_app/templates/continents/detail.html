@@ -15,9 +15,9 @@
       <ul>
         {% for country in continent.country_set.all %}
         <div class="card">
-            <a href="1">
+            <a href="{% url 'countries_detail' continent.id country.id %}">
             <td>{{country.name}}</td>
-            <img class="cont-img" src="{{MEDIA_URL}}{{ country.image}}">
+            <img class="cont-img" src="{{MEDIA_URL}}{{ country.image }}">
         </a>
             </div>
         {% endfor %}

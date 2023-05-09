@@ -5,15 +5,6 @@ from .forms import CityForm
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 
-
-countries = [
-   
-]
-
-cities =[
-   
-]
-
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
@@ -68,7 +59,6 @@ def add_city(request, country_id, continent_id):
       new_city.country_id = country_id
       new_city.save()
     return redirect("detail", country_id = country_id)
-
 
 def cities_index(request):
     return render(request, 'cities/index.html',{
