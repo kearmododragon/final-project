@@ -2,6 +2,15 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 
+continents = [
+   {"name": "Africa"},
+   {"name": "Asia"},
+   {"name": "Europe"},
+   {"name": "Australasia"},
+   {"name": "North America"},
+   {"name": "South America"},
+]
+
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
@@ -9,8 +18,14 @@ def home(request):
 def holidays(request):
     return render(request, 'holidays.html')
 
-def locations(request):
-    return render(request, 'locations.html')
+def locations_landing(request):
+   return render (request, "locations/landing.html")
+
+def continents_index(request):
+    return render(request, 'continents/index.html',{
+     "continents": continents  
+    } 
+)
 
 def signup(request):
   error_message = ''

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<h1>Continents</h1>
+
+
+{% for continent in continents %}
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">{{ continent.name }}</span>
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock %}

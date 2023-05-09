@@ -8,3 +8,11 @@ https://lucid.app/lucidchart/3ff0d0ae-42f1-4e60-b803-8015951427bd/edit?beaconFlo
 
 Figma
 https://www.figma.com/file/si0mgkJ5eeT79VyyPUy5xi/Competitive-Holidaying?type=design&node-id=0-1&t=w4kpK6EWn8nA0iLt-0
+
+
+Locations
+- landing page with button/link to continent/country/city
+- Grandparent = continent, Parent = Country, Child = city
+
+add the wiki image to each card  for continents
+https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Asia_%28orthographic_projection%29.svg/1200px-Asia_%28orthographic_projection%29.svg.png
