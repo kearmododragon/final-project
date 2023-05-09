@@ -15,4 +15,6 @@ Locations
 - Grandparent = continent, Parent = Country, Child = city
 
 add the wiki image to each card  for continents
+
+
 https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Asia_%28orthographic_projection%29.svg/1200px-Asia_%28orthographic_projection%29.svg.png
