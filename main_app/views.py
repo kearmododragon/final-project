@@ -11,6 +11,14 @@ continents = [
    {"name": "South America", "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/South_America_%28orthographic_projection%29.svg/1200px-South_America_%28orthographic_projection%29.svg.png"},
 ]
 
+countries = [
+   
+]
+
+cities =[
+   
+]
+
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
@@ -26,6 +34,17 @@ def continents_index(request):
      "continents": continents  
     } 
 )
+def countries_index(request):
+    return render(request, 'countries/index.html',{
+     "countries": countries  
+    } 
+)
+def cities_index(request):
+    return render(request, 'cities/index.html',{
+     "cities": cities  
+    } 
+)
+
 
 def signup(request):
   error_message = ''
