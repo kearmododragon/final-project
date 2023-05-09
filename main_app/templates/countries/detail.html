@@ -6,6 +6,9 @@
 <img class="cont-img-detail" src="{{MEDIA_URL}}{{ country.image}}">
 
 <h3>Add a new city:</h3>
-
+    {% csrf_token %}
+    {{ city_form.as_p }}
+    <input type ="submit" class="btn" value = "Add a city">
+</form>
 
 {% endblock %}
