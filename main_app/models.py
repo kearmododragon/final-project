@@ -23,6 +23,7 @@ class City(models.Model):
     name = models.CharField("City", max_length=300)
     image = models.URLField("Map", null=True, blank=True, max_length=5000)
     country = models.ForeignKey(Country, on_delete=models.CASCADE)
+    continent = models.ForeignKey(Continent, on_delete=models.CASCADE)
     mapsURL = models.URLField("Maps link", null=True, blank=True, max_length=5000)
 
     def __str__(self):

@@ -1,4 +1,6 @@
 - figure out the city form on details page
 - create trip + event models, pages, forms etc. 
 - once confirmed all are working, API initiated
+- fix login function
+- force parent options on forms
 - once API sorted and all forms working, CSS babeh

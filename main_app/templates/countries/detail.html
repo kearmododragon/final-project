@@ -6,9 +6,17 @@
 <img class="cont-img-detail" src="{{MEDIA_URL}}{{ country.image}}">
 
 <h3>Add a new city:</h3>
+<form>
     {% csrf_token %}
     {{ city_form.as_p }}
     <input type ="submit" class="btn" value = "Add a city">
 </form>
-
+<h1>Cities visited in {{country.name}} :</h1>
+      <ul>
+        {% for city in country.city_set.all %}
+            <td>{{city.name}}</td>
+            <img class="cont-img" src="{{MEDIA_URL}}{{ city.image }}">
+        {% endfor %}
+      </ul>
+  </div>
 {% endblock %}
