@@ -5,4 +5,22 @@
 <h1> {{ continent.name }}</h1>
 <img class="cont-img-detail" src="{{MEDIA_URL}}{{ continent.image}}">
 
+<h3>Add a new country:</h3>
+<form action = "{% url 'add_country' continent.id %}" method="POST">
+    {% csrf_token %}
+    {{ country_form.as_p }}
+    <input type ="submit" class="btn" value = "Add a Country">
+</form>
+<h1>Countries visited in {{continent.name}} :</h1>
+      <ul>
+        {% for country in continent.country_set.all %}
+        <div class="card">
+            <a href="{% url 'detail' continent.id %}">
+            <td>{{country.name}}</td>
+            <img class="cont-img" src="{{MEDIA_URL}}{{ country.image}}">
+        </a>
+            </div>
+        {% endfor %}
+      </ul>
+  </div>
 {% endblock %}

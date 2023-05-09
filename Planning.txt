@@ -14,4 +14,13 @@ https://www.figma.com/file/si0mgkJ5eeT79VyyPUy5xi/Competitive-Holidaying?type=de
 Continent links - Currently on ID number, want to change to name.
 The path seems to be the spot where it breaks 
 
+background image to circle through my images?
 
+2ndary nav bar with wiki images as links
+
+1 - Africa
+2 - South America
+3 - Asia
+4 - Europe
+5 - Oceana
+6 - North America
