@@ -17,3 +17,7 @@ body {
   .cont-img{
     max-height: 50px;
   }
+
+  .cont-img-detail{
+    max-height: 100px;
+  }

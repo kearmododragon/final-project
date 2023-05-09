@@ -9,14 +9,9 @@ https://lucid.app/lucidchart/3ff0d0ae-42f1-4e60-b803-8015951427bd/edit?beaconFlo
 Figma
 https://www.figma.com/file/si0mgkJ5eeT79VyyPUy5xi/Competitive-Holidaying?type=design&node-id=0-1&t=w4kpK6EWn8nA0iLt-0
 
-Continent images not added to the model, wouldn't accept 2nd argument
 
-continents = [
-   {"name": "Africa", "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Africa_%28orthographic_projection%29.svg/640px-Africa_%28orthographic_projection%29.svg.png" },
-   {"name": "Asia", "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Asia_%28orthographic_projection%29.svg/1200px-Asia_%28orthographic_projection%29.svg.png"},
-   {"name": "Europe", "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Europe_orthographic_Caucasus_Urals_boundary_%28with_borders%29.svg/1200px-Europe_orthographic_Caucasus_Urals_boundary_%28with_borders%29.svg.png"},
-   {"name": "Oceana", "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Oceania_%28centered_orthographic_projection%29.svg/1200px-Oceania_%28centered_orthographic_projection%29.svg.png"},
-   {"name": "North America", "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Location_North_America.svg/1200px-Location_North_America.svg.png"},
-   {"name": "South America", "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/South_America_%28orthographic_projection%29.svg/1200px-South_America_%28orthographic_projection%29.svg.png"},
-]
+
+Continent links - Currently on ID number, want to change to name.
+The path seems to be the spot where it breaks 
+
 

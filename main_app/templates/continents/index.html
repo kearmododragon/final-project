@@ -6,12 +6,14 @@
 
 
 {% for continent in continents %}
-  <div class="card">
-    <div class="card-content">
-      <span class="card-title">{{ continent.name }}</span>
-      <img class="cont-img" src ="{{MEDIA_URL}}{{ continent.image}}">
-    </div>
-  </div>
+<div class="card">
+    <a href="{% url 'detail' continent.id %}">
+        <div class="card-content">
+            <span class="card-title">{{ continent.name }}</span>
+            <img class="cont-img" src="{{MEDIA_URL}}{{ continent.image}}">
+        </div>
+    </a>
+</div>
 {% endfor %}
 
 {% endblock %}

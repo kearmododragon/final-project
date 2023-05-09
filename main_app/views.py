@@ -27,6 +27,11 @@ def continents_index(request):
      "continents": continents  
     } 
 )
+def continents_detail(request, continent_id):
+    continent = Continent.objects.get(id=continent_id)
+    return render(request, 'continents/detail.html', {"continent": continent })
+
+
 def countries_index(request):
     return render(request, 'countries/index.html',{
      "countries": countries  
