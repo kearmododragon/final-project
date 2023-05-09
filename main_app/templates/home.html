@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Welcome to Competitive Holidaying</h1>
+
+{% if user.is_authenticated %}
+<button>Locations</button>
+<button>Events</button>
+<button>Trips</button>
+{% else %}
+<p> You've seen competitive sports. You've heard of competitive tag. There's been countless stereotypes on competitive spelling. Well, lets make holidays competitive.</p>
+{% endif %}
+{% endblock %}
