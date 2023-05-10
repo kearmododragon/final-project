@@ -37,3 +37,7 @@ body {
     text-decoration: none;
     color: #12399c;
   }
+
+  .nav-img{
+    max-width: 50px;
+  }

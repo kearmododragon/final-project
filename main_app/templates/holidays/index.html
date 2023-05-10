@@ -4,11 +4,10 @@
 <h1>Holidays</h1>
 
 {% for holiday in holidays %}
-
 <div class="card">
-    <a href="{% url 'holiday-detail' holiday.id %}">
+  <a href="{% url 'holiday_detail' holiday.id %}"></a>
       <div class="card-content">
-        <span class="card-title">Holiday: {{ holiday.name }}</span>
+          <span class="card-title">{{ holiday.name }}</span>
       </div>
     </a>
 </div>
