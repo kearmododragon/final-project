@@ -8,6 +8,14 @@
 <button type="button" class="btn"><a class="link" href="/events">Events</a></button>
 <button type="button" class="btn"><a class="link" href="/holidays">Holidays</a></button>
 
+<h4>Euro Exchange rates worldwide</h4>
+<h6>updated daily</h6>
+<ul>
+    {% for currency, rate in rates.items %}
+        <li>{{ currency }}: {{ rate }}</li>
+    {% endfor %}
+</ul>
+
 {% else %}
 <p> You've seen competitive sports. You've heard of competitive tag. There's been countless stereotypes on competitive spelling. Well, lets make holidays competitive.</p>
 {% endif %}

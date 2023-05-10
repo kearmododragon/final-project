@@ -18,8 +18,11 @@
 <h1>Cities visited in {{country.name}} :</h1>
 <ul>
   {% for city in country.city_set.all %}
+  <a href="{% url 'countries_detail' continent.id country.id %}">
   <td>{{city.name}}</td>
   <img class="cont-img" src="{{MEDIA_URL}}{{ city.image }}">
+  </a>
+
   {% endfor %}
 </ul>
 </div>

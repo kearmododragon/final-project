@@ -10,6 +10,11 @@ Figma
 https://www.figma.com/file/si0mgkJ5eeT79VyyPUy5xi/Competitive-Holidaying?type=design&node-id=0-1&t=w4kpK6EWn8nA0iLt-0
 
 
+API
+https://rapidapi.com/rogerkingdom10/api/ranked-crime-cities
+2nd API
+https://api-ninjas.com/api/country
+
 
 Continent links - Currently on ID number, want to change to name.
 The path seems to be the spot where it breaks 

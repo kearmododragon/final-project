@@ -6,10 +6,16 @@ from .forms import HolidayForm
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+import requests
+from django.shortcuts import render
 
-# Create your views here.
+
 def home(request):
-    return render(request, 'home.html')
+    url = 'https://api.exchangerate.host/latest'
+    response = requests.get(url)
+    data = response.json()
+    rates = data['rates']
+    return render(request, 'home.html', {'rates': rates})
 
 def holidays_index(request):
     holidays = Holiday.objects.all()
@@ -93,6 +99,10 @@ def cities_index(request):
      "cities": cities  
     } 
 )
+
+def city_detail(request, city_id):
+   city = City.objects.get(id=city_id)
+   return render(request, 'cities/detail.html')
 
 def signup(request):
   error_message = ''

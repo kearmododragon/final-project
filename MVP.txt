@@ -1,0 +1,15 @@
+Full Crud
+- Create [DONE]
+- Render [DONE]
+- Update
+- Delete
+
+API
+- Print [DONE]
+- Render [DONE]
+
+Large scope for improving. Second API / clean up first.
+
+
+CSS
+- complete CSS with new language
