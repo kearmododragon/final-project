@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Continent, Country 
+from .models import Continent, Country, City, Holiday, Event 
 from .forms import CountryForm
 from .forms import CityForm 
 from django.contrib.auth import login
@@ -9,8 +9,23 @@ from django.contrib.auth.forms import UserCreationForm
 def home(request):
     return render(request, 'home.html')
 
-def holidays(request):
-    return render(request, 'holidays.html')
+def holidays_index(request):
+    holidays = Holiday.objects.all()
+    return render(request, 'holidays/index.html',{
+       "holidays" : holidays
+    })
+
+def holidays_detail(request):
+   return render(request)
+
+def events_index(request):
+   events = Event.objects.all()
+   return render(request, 'events/index.html',{
+      "events" : events
+   })
+
+def event_detail(request):
+   return render(request)
 
 def locations_landing(request):
    return render (request, "locations/landing.html")
@@ -52,7 +67,7 @@ def countries_detail(request, continent_id, country_id):
         "city_form": city_form 
     })
 
-def add_city(request, country_id, continent_id):
+def add_city(request, continent_id, country_id,):
     form = CityForm(request.POST)
     if form.is_valid():
       new_city = form.save(commit=False)

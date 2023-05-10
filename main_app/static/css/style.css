@@ -21,3 +21,19 @@ body {
   .cont-img-detail{
     max-height: 100px;
   }
+
+  .btn{
+    text-decoration: none;
+    background-color: #D82274;
+    color: #12399c;
+  }
+
+  .link{
+    text-decoration: none;
+    color: #12399c;
+  }
+
+  .card-content{
+    text-decoration: none;
+    color: #12399c;
+  }

@@ -11,7 +11,7 @@ class Continent(models.Model):
 
 
 class Country(models.Model):
-    name = models.CharField("Country", max_length=300)
+    name = models.CharField("Country", unique=True, max_length=300)
     image = models.URLField("Map", null=True, blank=True, max_length=5000)
     mapsURL = models.URLField("Maps link", null=True, blank=True, max_length=5000)
     continent = models.ForeignKey(Continent, on_delete=models.CASCADE)
@@ -20,7 +20,7 @@ class Country(models.Model):
        return self.name
 
 class City(models.Model):
-    name = models.CharField("City", max_length=300)
+    name = models.CharField("City", max_length=300,)
     image = models.URLField("Map", null=True, blank=True, max_length=5000)
     country = models.ForeignKey(Country, on_delete=models.CASCADE)
     continent = models.ForeignKey(Continent, on_delete=models.CASCADE)
@@ -29,23 +29,21 @@ class City(models.Model):
     def __str__(self):
         return self.name
     
-
-class Trip(models.Model):
+class Holiday(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    name = models.CharField
+    name = models.CharField(max_length=100,  default="holiday")
+    arrivalDate = models.DateField("Left home", auto_now=True)
+    deparureDate = models.DateField("Returned", auto_now=True)
     city = models.ForeignKey(City, on_delete=models.CASCADE)
-    arrivalDate = models.DateField
-    deparureDate = models.DateField
-    companions = models.CharField
+    companions = models.CharField(max_length=1000,  default="friend") 
         
     def __str__(self):
         return self.name
 
 class Event(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    name = models.CharField
+    name = models.CharField(default="event", max_length=100)
     city = models.ForeignKey(City, on_delete=models.CASCADE)
-    trip = models.ForeignKey(Trip, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name

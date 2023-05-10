@@ -15,7 +15,8 @@
     <a href="{% url 'home' %}">Home</a>
     {% if user.is_authenticated %}
     <a href="{% url 'holidays' %}"> Holidays | </a>
-    <a href="/locations">Locations | </a>
+    <a href="{% url 'landing'%}">Locations | </a>
+    <a href="{% url 'events-index' %}"> Events | </a>
     <a href="{% url 'logout' %}">Log Out</a>
     {% else %}
     <a href="{% url 'signup' %}">sign up | </a>

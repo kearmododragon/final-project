@@ -1,4 +1,4 @@
-- figure out the city form on details page
+- figure out the city form on details page (action form broken, reverse not found)
 - create trip + event models, pages, forms etc. 
 - once confirmed all are working, API initiated
 - fix login function
