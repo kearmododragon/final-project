@@ -7,7 +7,6 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 import requests
-from django.shortcuts import render
 
 
 def home(request):
@@ -67,6 +66,7 @@ def add_country(request, continent_id):
       new_country = form.save(commit=False)
       new_country.continent_id = continent_id
       new_country.save()
+      print(new_country.id)
     return redirect("detail", continent_id = continent_id)
 
 def countries_index(request, continent_id):
@@ -90,7 +90,10 @@ def add_city(request, country_id, continent_id):
     if form.is_valid():
         new_city = form.save(commit=False)
         new_city.country_id = country_id
+        new_city.continenet_id = continent_id
         new_city.save()
+        city = new_city
+        print(city.id)
     return redirect("countries_detail", country_id = country_id, continent_id = continent_id)
 
 def cities_index(request):
@@ -102,7 +105,9 @@ def cities_index(request):
 
 def city_detail(request, city_id):
    city = City.objects.get(id=city_id)
-   return render(request, 'cities/detail.html')
+   return render(request, 'cities/detail.html',{
+      "city": city,
+   })
 
 def signup(request):
   error_message = ''
