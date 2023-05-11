@@ -5,32 +5,76 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <title>Holidayyyy</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {
+            min-height: 100%;
+            margin-bottom: -50px;
+        }
+
+        .footer,
+        .push {
+            height: 50px;
+        }
+    </style>
 </head>
 <body>
-<header class="navbar-fixed">
-    <div class="navbar">
-        <nav>
-    {% if user.is_authenticated %}
-    <a href="{% url 'holidays' %}"> Holidays | </a>
-    <a href="{% url 'landing'%}">Locations | </a>
-    <a href="{% url 'events-index' %}"> Events | </a>
-    <a href="{% url 'logout' %}">Log Out</a>
-    {% else %}
-    <a href="{% url 'signup' %}">sign up | </a>
-    <a href="{% url 'login' %}">login | </a>
-    {% endif %}
-</nav>
-</div>
-</header>
-<sctipt src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></sctipt>
+<div class="wrapper">
+    <header class="navbar-fixed">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Rotating_earth_animated_transparent.gif?20201022124448" alt="rotating earth gif" width="50" height="50">
+            <a class="navbar-brand" href="#">Holidays but competitive</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'holidays' %}">Holidays</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'landing' %}">Locations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'events-index' %}">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </header>
     <main class="container">
-    {% block content %}
-
-    {% endblock %}
-</main>
-<footer class="page-footer">
+        {% block content %}
+        {% endblock %}
+    </main>
+    <div class="push"></div>
+</div>
+<footer class="page-footer fixed-bottom">
     <p>Made by Ciaran Kearney</p>
 </footer>
-</body>
-</html>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqV

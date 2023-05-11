@@ -1,43 +1,32 @@
 body {
-    background-color: #2b2b2b;
-    color: #D82274;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-  .navbar{
-      color: #12399c;
-  }
-  .page-footer{
-    color: #12399c;
-    padding-top: 0;
-    text-align: right;
-  }
+  background-color: #2b2b2b;
+  color: #D82274;
+}
 
-  .cont-img{
-    max-height: 50px;
-  }
+.navbar {
+  background-color: #2b2b2b;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  color: #D82274;
+  background-color: #D82274;
+}
 
-  .cont-img-detail{
-    max-height: 100px;
-  }
+.navbar-brand {
+  color: #D82274;
+}
 
-  .btn{
-    text-decoration: none;
-    background-color: #D82274;
-    color: #12399c;
-  }
+.navbar-nav .nav-link {
+  color: #D82274;
+}
 
-  .link{
-    text-decoration: none;
-    color: #12399c;
-  }
+.page-footer {
+  background-color: #2b2b2b;
+  color: #D82274;
+}
 
-  .card-content{
-    text-decoration: none;
-    color: #12399c;
-  }
-
-  .nav-img{
-    max-width: 50px;
-  }
+h1 {
+  margin-top: 80px !important;
+  color: #12399c;
+}
