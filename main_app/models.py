@@ -1,5 +1,8 @@
 from django.db import models
+from django.urls import reverse
+from datetime import date
 from django.contrib.auth.models import User
+
 
 # Create your models here.
 
@@ -8,7 +11,6 @@ class Continent(models.Model):
     image = models.URLField(null=True, blank=True, max_length=5000)
     def __str__(self):
         return self.name
-
 
 class Country(models.Model):
     name = models.CharField("Country", unique=True, max_length=300)

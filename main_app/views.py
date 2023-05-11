@@ -1,9 +1,10 @@
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from .models import Continent, Country, City, Holiday, Event 
 from .forms import CountryForm
 from .forms import CityForm 
 from .forms import HolidayForm
-from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 import requests
@@ -109,6 +110,17 @@ def city_detail(request, city_id):
       "city": city,
    })
 
+class CityUpdate(UpdateView):
+   model = City 
+   fields = ["name"]
+   template_name = 'cities/city_form.html'
+   success_url = '/locations'
+   
+class CityDelete(DeleteView):
+   model = City
+   success_url = "/locations"
+   template_name = 'cities/city_confirm_delete.html'
+
 def signup(request):
   error_message = ''
   if request.method == 'POST':
@@ -122,6 +134,23 @@ def signup(request):
   form = UserCreationForm()
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
+
+def login_view(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('home')
+            else:
+                form.add_error(None, 'Invalid login credentials.')
+    else:
+        form = AuthenticationForm()
+    context = {'form': form}
+    return render(request, 'registration/login.html', context)
 
 class CountryUpdate(UpdateView):
    model = Country
