@@ -81,10 +81,15 @@ STATICFILES_DIRS = [
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'holiday',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'competivie-holiday',
+        'USER': 'holidayingadmin',
+        'PASSWORD': 'admin',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
+
 
 
 # Password validation
