@@ -12,9 +12,10 @@ import requests
 
 def home(request):
     url = 'https://api.exchangerate.host/latest'
+    currencies_to_display = ['USD', 'GBP', 'JPY']
     response = requests.get(url)
     data = response.json()
-    rates = data['rates']
+    rates = {currency: rate for currency, rate in data['rates'].items() if currency in currencies_to_display}
     return render(request, 'home.html', {'rates': rates})
 
 def holidays_index(request):
@@ -70,12 +71,11 @@ def add_country(request, continent_id):
       print(new_country.id)
     return redirect("detail", continent_id = continent_id)
 
-def countries_index(request, continent_id):
-    countries = Country.objects.all()
-    return render(request, 'countries/index.html',{
-     "countries": countries  
-    } 
-)
+def countries_index(request):
+    countries=Country.objects.all()
+    return render(request, 'countries/detail.html', {
+        "countries": countries,
+    })
 
 def countries_detail(request, continent_id, country_id):
     country = Country.objects.get(id=country_id)

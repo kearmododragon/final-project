@@ -5,76 +5,86 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <title>Holidayyyy</title>
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-
-        .wrapper {
-            min-height: 100%;
-            margin-bottom: -50px;
-        }
-
-        .footer,
-        .push {
-            height: 50px;
-        }
-    </style>
 </head>
 <body>
-<div class="wrapper">
-    <header class="navbar-fixed">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Rotating_earth_animated_transparent.gif?20201022124448" alt="rotating earth gif" width="50" height="50">
-            <a class="navbar-brand" href="#">Holidays but competitive</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
+<div>
+    <header>
+        <nav class="navbar fixed-top navbar-expand-sm bg-dark">
+            <a href="{% url 'home' %}">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Rotating_earth_animated_transparent.gif?20201022124448" alt="rotating earth gif" width="50" height="50">
+            </a>            
+            <span class ="navbar-brand mb-0 h1" style="color: #D82274;">Holidays, but competitive.</span>
+
+            <div 
+            class ="collaps navbar-collapse position-end"
+            id ="navbarNav">
+                <ul class ="navbar-nav">
                     {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'home' %}">Home</a>
-                    </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'holidays' %}">Holidays</a>
+                        <li class ="nav-item active">
+                            <a href="{% url 'holidays' %}" class="nav-link active">Holidays</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'landing' %}">Locations</a>
+                        <li class ="nav-item active">
+                            <a href="{% url 'landing' %}" class="nav-link active">Locations</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'events-index' %}">Events</a>
+                        <li class ="nav-item active">
+                            <a href="{% url 'events-index' %}" class="nav-link active">Events</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+                        <li class ="nav-item active">
+                            <a href="{% url 'logout' %}" class="nav-link active">Log Out</a>
                         </li>
                     {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                        <li class ="nav-item active">
+                            <a href="{% url 'signup' %}" class="nav-link active">Sign Up</a>
+                        </li class ="nav-item active">
+                            <a href="{% url 'login' %}" class="nav-link active">Log In</a>
                         </li>
                     {% endif %}
                 </ul>
             </div>
         </nav>
     </header>
-    <main class="container">
+    
+    <main class="container-fluid p-0 bg-dark">
         {% block content %}
         {% endblock %}
     </main>
-    <div class="push"></div>
+    <div class="push">
 </div>
-<footer class="page-footer fixed-bottom">
-    <p>Made by Ciaran Kearney</p>
-</footer>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<footer class="page-footer bg-dark fixed-bottom" style="color: #D82274;">
+    <div class="container" >
+        <div class="row mt-2">
+          <div class="col-md-5">
+            <h2>&#8364 exchange rates</h2><h6>updated daily</h6>
+            <div class="row">
+              {% for currency, rate in rates.items %}
+                <div class="col-sm-4">
+                  {% if currency == 'USD' %}
+                    <p>&#36;{{ rate }}</p>
+                  {% elif currency == 'GBP' %}
+                    <p>&#163;{{ rate }}</p>
+                  {% elif currency == 'JPY' %}
+                    <p>&#165;{{ rate }}</p>
+                  {% else %}
+                    <p>{{ currency }}: {{ rate }}</p>
+                  {% endif %}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    <div class="container-fluid">
+      <div class="row justify-content-end">
+        <div class="col-auto" style="color: #D82274;">
+          Created by Ciaran Kearney
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqV

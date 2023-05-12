@@ -1,41 +1,61 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Locations</h1>
+<div class="bg-dark">
+
+<h1>Locations</h1>
 
   <div class="d-flex justify-content-center">
-    <div class="btn-group">
-      <button type="button" class="btn btn-outline-primary"><a class="link" href="continents/">Continents</a></button>
-      <button type="button" class="btn btn-outline-primary"><a class="link" href="countries/">Countries</a></button>
-      <button type="button" class="btn btn-outline-primary"><a class="link" href="cities/">Cities</a></button>
+    <div class="btn-group my-5">
+      <button type="button" class="btn btn-outline-primary mx-2"><a class="link" href="/countries/" style="color: black;">Countries</a></button>
+      <button type="button" class="btn btn-outline-primary mx-2"><a class="link" href="cities/" style="color: black;">Cities</a></button>
+    </div>
+  </div>
+  
+
+  <div class="row justify-content-center bg-transparent">
+    <div class="col-sm-2 bg-transparent view overlay zoom">
+      <a href="/locations/1">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Africa_%28orthographic_projection%29.svg/640px-Africa_%28orthographic_projection%29.svg.png" alt="Africa" class="img-thumbnail bg-transparent border-dark view overlay zoom">
+    </a>
+    </div>
+   
+    <div class="col-sm-2">
+      <a href="/locations/2">
+      <img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Asia_%28orthographic_projection%29.svg/1200px-Asia_%28orthographic_projection%29.svg.png" alt ="Asia" class="img-thumbnail bg-transparent border-dark">
+      </a>
+    </div>
+
+    <div class="col-sm-2">
+      <a href="/locations/7">
+      <img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Antarctica_%28orthographic_projection%29.svg/1200px-Antarctica_%28orthographic_projection%29.svg.png" alt ="Antartica" class="img-thumbnail bg-transparent border-dark">
+      </a>
+    </div>
+
+    <div class="col-sm-2">
+      <a href="/locations/3">
+      <img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Europe_orthographic_Caucasus_Urals_boundary_%28with_borders%29.svg/1200px-Europe_orthographic_Caucasus_Urals_boundary_%28with_borders%29.svg.png" alt ="Europe" class="img-thumbnail bg-transparent border-dark">
+      </a>
     </div>
   </div>
 
   <div class="row justify-content-center">
     <div class="col-sm-2">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Africa_%28orthographic_projection%29.svg/640px-Africa_%28orthographic_projection%29.svg.png" alt="Africa" class="img-thumbnail">
+      <a href="/locations/5">
+      <img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Location_North_America.svg/1200px-Location_North_America.svg.png" alt ="North America" class="img-thumbnail bg-transparent border-dark">
+      </a>
     </div>
+
     <div class="col-sm-2">
-      <img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Asia_%28orthographic_projection%29.svg/1200px-Asia_%28orthographic_projection%29.svg.png" alt ="Asia" class="img-thumbnail">
+      <a href="/locations/4">
+      <img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Oceania_%28centered_orthographic_projection%29.svg/1200px-Oceania_%28centered_orthographic_projection%29.svg.png" alt ="Oceana" class="img-thumbnail bg-transparent border-dark">
     </div>
+
     <div class="col-sm-2">
-      <img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Antarctica_%28orthographic_projection%29.svg/1200px-Antarctica_%28orthographic_projection%29.svg.png" alt ="Antartica" class="img-thumbnail">
-    </div>
-    <div class="col-sm-2">
-      <img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Europe_orthographic_Caucasus_Urals_boundary_%28with_borders%29.svg/1200px-Europe_orthographic_Caucasus_Urals_boundary_%28with_borders%29.svg.png" alt ="Europe" class="img-thumbnail">
+      <a href="/locations/6">
+      <img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/South_America_%28orthographic_projection%29.svg/1200px-South_America_%28orthographic_projection%29.svg.png" alt ="South America" class="img-thumbnail bg-transparent border-dark">
+      </a>
     </div>
   </div>
-
-  <div class="row justify-content-center">
-    <div class="col-sm-2">
-      <img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Location_North_America.svg/1200px-Location_North_America.svg.png" alt ="North America" class="img-thumbnail">
-    </div>
-    <div class="col-sm-2">
-      <img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Oceania_%28centered_orthographic_projection%29.svg/1200px-Oceania_%28centered_orthographic_projection%29.svg.png" alt ="Oceana" class="img-thumbnail">
-    </div>
-    <div class="col-sm-2">
-      <img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/South_America_%28orthographic_projection%29.svg/1200px-South_America_%28orthographic_projection%29.svg.png" alt ="South America" class="img-thumbnail">
-    </div>
-  </div>
-
+</div>  
 {% endblock %}

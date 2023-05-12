@@ -15,6 +15,9 @@ https://rapidapi.com/rogerkingdom10/api/ranked-crime-cities
 2nd API
 https://api-ninjas.com/api/country
 
+design
+https://www.mendo.nl/
+
 
 Continent links - Currently on ID number, want to change to name.
 The path seems to be the spot where it breaks 
