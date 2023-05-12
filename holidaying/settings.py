@@ -82,7 +82,7 @@ STATICFILES_DIRS = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'competivie-holiday',
+        'NAME': 'competivie_holiday',
     }
 }
 
