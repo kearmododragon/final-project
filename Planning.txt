@@ -1,0 +1,49 @@
+Trello
+https://trello.com/b/FSgZUy6p/competitive-holidaying
+
+
+LucidChart (ERD)
+https://lucid.app/lucidchart/3ff0d0ae-42f1-4e60-b803-8015951427bd/edit?beaconFlowId=806611AA6BCFD07A&invitationId=inv_38faab79-7492-4f6f-a26d-1249b1f7a996&page=0_0#
+
+
+Figma
+https://www.figma.com/file/si0mgkJ5eeT79VyyPUy5xi/Competitive-Holidaying?type=design&node-id=0-1&t=w4kpK6EWn8nA0iLt-0
+
+
+API
+https://rapidapi.com/rogerkingdom10/api/ranked-crime-cities
+2nd API
+https://api-ninjas.com/api/country
+
+design
+https://www.mendo.nl/
+
+
+Continent links - Currently on ID number, want to change to name.
+The path seems to be the spot where it breaks 
+
+background image to circle through my images?
+
+2ndary nav bar with wiki images as links
+
+1 - Africa
+2 - South America
+3 - Asia
+4 - Europe
+5 - Oceana
+6 - North America
+
+
+class Holiday(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100,  default="holiday")
+    arrivalDate = models.DateField("Left home", auto_now=True)
+    deparureDate = models.DateField("Returned", auto_now=True)
+    city = models.ForeignKey(City, on_delete=models.CASCADE)
+    companions = models.CharField(max_length=1000,  default="friend") 
+        
+    def __str__(self):
+        return self.name,
+
+
+            holiday = models.ForeignKey(Holiday, on_delete=models.CASCADE)

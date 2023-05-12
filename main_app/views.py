@@ -9,8 +9,14 @@ from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 import requests
 
+
 def home(request):
-    return render(request, 'home.html')
+    url = 'https://api.exchangerate.host/latest'
+    currencies_to_display = ['USD', 'GBP', 'JPY']
+    response = requests.get(url)
+    data = response.json()
+    rates = {currency: rate for currency, rate in data['rates'].items() if currency in currencies_to_display}
+    return render(request, 'home.html', {'rates': rates})
 
 def holidays_index(request):
     holidays = Holiday.objects.all()

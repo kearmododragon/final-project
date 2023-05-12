@@ -1,0 +1,7 @@
+- continents names coming through in admin/form as continent1
+- csrf_token is showing on details page
+- form not creating country
+- country not rendering on page
+- continents name instead of id (django URL parameters, str vs int)
+- login seems to be broken, but sign up works (logs in) and admin portal works
+- locations model doesn't show dates, due to default value?
