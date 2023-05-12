@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Sansita:ital@1&display=swap" rel="stylesheet">
+    <title>Holidayyyy</title>
+</head>
+<body>
+<div>
+    <header>
+        <nav class="navbar fixed-top navbar-expand-sm bg-dark">
+            <a href="{% url 'home' %}">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Rotating_earth_animated_transparent.gif?20201022124448" alt="rotating earth gif" width="50" height="50">
+            </a>            
+            <span class ="navbar-brand mb-0 h1" style="color: #D82274; font-family: 'Bangers', cursive;">Holidays, but competitive.</span>
+
+            <div 
+            class ="collaps navbar-collapse position-end"
+            id ="navbarNav">
+                <ul class ="navbar-nav">
+                    {% if user.is_authenticated %}
+                        <li class ="nav-item active">
+                            <a href="{% url 'holidays' %}" class="nav-link active">Holidays</a>
+                        </li>
+                        <li class ="nav-item active">
+                            <a href="{% url 'landing' %}" class="nav-link active">Locations</a>
+                        </li>
+                        <li class ="nav-item active">
+                            <a href="{% url 'events-index' %}" class="nav-link active">Events</a>
+                        </li>
+                        <li class ="nav-item active">
+                            <a href="{% url 'logout' %}" class="nav-link active">Log Out</a>
+                        </li>
+                    {% else %}
+                        <li class ="nav-item active">
+                            <a href="{% url 'signup' %}" class="nav-link active">Sign Up</a>
+                        </li class ="nav-item active">
+                            <a href="{% url 'login' %}" class="nav-link active">Log In</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <style>
+      main {
+          min-height: 100vh;
+      }
+  </style>
+  
+  <main class="container-fluid md-0 bg-dark">
+      {% block content %}
+      {% endblock %}
+  </main>
+  <div class="push"></div>
+  <footer class="page-footer bg-dark fixed-bottom font-family: 'Sansita', sans-serif;" style="color: #D82274;">
+    <div class="container" >
+        <div class="row mt-2">
+          <div class="col-md-5 font-family: 'Sansita', sans-serif;">
+            <span class ="navbar-brand mb-0 h1" style="color: #D82274; font-family: 'Bangers', cursive;">&#8364 exchange rates</span>            
+            <span class ="navbar-brand mb-0 h1" style="color: #D82274; font-family: 'Bangers', cursive;">updated daily</span>
+            <div class="row">
+              {% for currency, rate in exchange_rates.items %}
+              <div class="col-sm-4">
+                  {% if currency == 'USD' %}
+                      <span class="navbar-brand mb-0 h1" style="color: #D82274; font-family: 'Bangers', cursive;">&#36;{{ rate|floatformat:2 }}</span>
+                  {% elif currency == 'GBP' %}
+                      <span class="navbar-brand mb-0 h1" style="color: #D82274; font-family: 'Bangers', cursive;">&#163;{{ rate|floatformat:2 }}</span>
+                  {% elif currency == 'JPY' %}
+                      <span class="navbar-brand mb-0 h1" style="color: #D82274; font-family: 'Bangers', cursive;">&#165;{{ rate|floatformat:2 }}</span>
+                  {% else %}
+                      <span class="navbar-brand mb-0 h1" style="color: #D82274; font-family: 'Bangers', cursive;">{{ currency }}: {{ rate|floatformat:2 }}</span>
+                  {% endif %}
+              </div>
+          {% endfor %}
+          
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    <div class="container-fluid">
+      <div class="row justify-content-end">
+        <div class="col-auto" style="color: #D82274;">
+          Created by Ciaran Kearney
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqV

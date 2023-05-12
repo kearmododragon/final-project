@@ -1,0 +1,24 @@
+Full Crud
+- Create    [DONE]
+- Render    [DONE]
+- Update    [DONE]
+- Delete    [DONE]
+
+Immidiate Scope for improving 
+- Update/delete on more than just cities.
+- attach API to specific countries.
+- hardcode parents into the children.
+- trips and events need to be crud and only visible to the owner
+- countries and cities overviews coded in
+- dates for holidays
+
+API
+- Print     [DONE]
+- Render    [DONE]
+
+Large scope for improving. Second API / clean up first.
+
+
+CSS
+- complete CSS with new language
+

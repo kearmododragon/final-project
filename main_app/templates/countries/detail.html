@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<h1> {{ country.name }}</h1>
+<img class="cont-img-detail" src="{{MEDIA_URL}}{{ country.image}}">
+<button class="btn">Edit</button>
+
+
+<h3>Add a new city:</h3>
+
+<form method="POST" action="{% url 'add_city' continent_id country.id  %}">
+  {% csrf_token %}
+  {{ city_form.as_p }}
+  <button type="submit" class="btn btn-primary">Add City</button>
+</form>
+
+
+<h1>Cities visited in {{ country.name }}:</h1>
+<ul>
+{% for city in country.city_set.all %}
+  <div class ="card">
+  <a href="{% url 'city_detail' city.id %}">
+      <td> {{ city.name }}</td>
+    <img class="cont-img" src="{{ MEDIA_URL }}{{ city.image }}">
+  </a>
+  </div>
+{% endfor %}
+</ul>
+</div>
+
+
+{% endblock %}

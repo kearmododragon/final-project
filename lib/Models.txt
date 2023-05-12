@@ -1,0 +1,64 @@
+Compeitive Hollidaying
+
+MVP 
+- Create user 
+- Only able to log in if not logged in
+- Create, Read, Update, Delete holidays
+- Access basic API
+3* 1:m / m:m relationships
+
+
+Models
+user
+Country
+City
+Event
+Holidays
+
+USER 
+User - Trip
+1 - m
+
+User - Event
+1 - m
+
+TRIP
+Trip - User
+M - 1
+
+Trip - City
+m - M
+
+Trip - Event
+1 - M
+
+EVENT
+Event - User
+m - 1
+
+Event - City
+1 - 1
+
+Event - Trip
+1 - m
+
+CITY
+City - Trip
+m - m 
+
+City - Event
+1 - 1
+
+City - Country 
+1 - 1 
+
+COUNTRY
+country - City
+1 - 1
+
+Country - Continent
+m - 1
+
+CONTINENT 
+Continent - Country
+1 - m

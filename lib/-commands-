@@ -1,0 +1,10 @@
+migrate
+
+python3 manage.py migrate
+python3 manage.py makemigrations
+
+
+run server
+python3 manage.py runserver  
+
+[ALLWAYS KILL THE SERVER AS FIRST DEBUG]

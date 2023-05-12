@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+  <h1 class="display-3">Welcome to Competitive Holidaying</h1>
+{% if user.is_authenticated %}
+
+  <div class="row mt-5">
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Locations</h5>
+          <p class="card-text">Explore and add new cities to our database.</p>
+          <a href="/locations" class="btn btn-primary">Go to Locations</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Events</h5>
+          <p class="card-text">Create your own Events to show off.</p>
+          <a href="/events" class="btn btn-primary">Go to Events</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Holidays</h5>
+          <p class="card-text">Store and track your competitive holidays.</p>
+          <a href="/holidays" class="btn btn-primary">Go to Holidays</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <h4>Euro Exchange rates worldwide</h4>
+      <h6>updated daily</h6>
+      <ul class="list-group">
+        {% for currency, rate in rates.items %}
+        <li class="list-group-item">{{ currency }}: {{ rate }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% else %}
+
+  <div class="jumbotron">
+    <p class="lead">You've seen competitive sports. You've heard of competitive tag. There have been countless stereotypes on competitive spelling. Well, let's make holidays competitive.</p>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}
