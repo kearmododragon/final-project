@@ -8,7 +8,12 @@
         <div class="row no-gutters">
           <div class="col-md-7 d-flex align-items-center">
             <div class="card-body text-center">
-              <h1 class="card-title" style="color: #d82274; font-family: 'Bangers', cursive;" href="{{city.mapsURL}}" target="_blank">{{ city.name }}, {{ city.country }}</h1>
+                <a href="{{ city.mapsURL }}" target="_blank">
+                    <h1 class="card-title" style="color: #d82274; font-family: 'Bangers', cursive;">
+                      {{ city.name }}, {{ city.country }}
+                    </h1>
+                  </a>
+                  
             </div>
           </div>
           <div class="col-md-5">
