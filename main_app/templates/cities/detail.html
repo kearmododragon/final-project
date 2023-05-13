@@ -4,29 +4,27 @@
 
 <div class="row mt-5 bg-dark p-4">
     <div class="col-md-6 mx-auto my-2">
-      <div class="card bg-dark border-dark">
-        <div class="row no-gutters">
-          <div class="col-md-7 d-flex align-items-center">
-            <div class="card-body text-center">
-                <a href="{{ city.mapsURL }}" target="_blank">
-                    <h1 class="card-title" style="color: #d82274; font-family: 'Bangers', cursive;">
-                      {{ city.name }}, {{ city.country }}
-                    </h1>
-                  </a>
-                  
+        <div class="card bg-dark border-dark">
+            <div class="row no-gutters">
+                <div class="col-md-5 my-2 d-flex align-items-stretch">
+                    <div class="card align-items-stretch bg-dark border-dark">
+                        <div class="card-body text-center">
+                            <h1 class="card-title" style="color: #d82274; font-family: 'Bangers', cursive;">
+                                <a href="{{ city.mapsURL }}" target="_blank" style="color: #d82274; text-decoration: none;">
+                                    {{ city.name }}, {{ city.country }}
+                                </a>
+                            </h1>
+                            <img class="cont-img-detail mx-auto d-block" src="{{ MEDIA_URL }}{{ city.image }}" style="height: 500px;">
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-md-5">
-            <img class="card-img" src="{{ MEDIA_URL }}{{ city.image }}" alt="{{ city.name }}">
-          </div>
+            <div class="card-footer d-flex justify-content-center bt-dark border-dark">
+                <button type="button" class="btn btn-edit mx-2"><a href="{% url 'cities_update' city.id %}" style="color: #fff; text-decoration: none;">Edit</a></button>
+                <button type="button" class="btn btn-edit mx-2"><a href="{% url 'cities_delete' city.id %}" style="color: #fff; text-decoration: none;">Delete</a></button>
+            </div>
         </div>
-        <div class="card-footer d-flex justify-content-center bt-dark border-dark">
-          <button type="button" class="btn btn-edit mx-2"><a href="{% url 'cities_update' city.id %}">Edit</a></button>
-          <button type="button" class="btn btn-edit mx-2"><a href="{% url 'cities_delete' city.id %}">Delete</a></button>
-        </div>
-      </div>
     </div>
-  </div>
-  
+</div>
 
 {% endblock %}
