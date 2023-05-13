@@ -27,3 +27,24 @@
 .button:hover{
   background-color: #c31f67;
 }
+
+
+.btn,
+.btn-edit {
+  background-color: #d82274;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn-edit:hover {
+  background-color: #c31f67;
+}
+
+.btn-edit a {
+  color: #fff;
+  text-decoration: none;
+}
