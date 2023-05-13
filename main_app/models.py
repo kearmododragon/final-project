@@ -13,9 +13,9 @@ class Continent(models.Model):
         return self.name
 
 class Country(models.Model):
-    name = models.CharField("Country", unique=True, max_length=300)
-    image = models.URLField("Map", null=True, blank=True, max_length=5000)
-    mapsURL = models.URLField("Maps link", null=True, blank=True, max_length=5000)
+    name = models.CharField("Country name:", unique=True, max_length=300)
+    image = models.URLField("URL image of the country", null=True, blank=True, max_length=5000)
+    mapsURL = models.URLField("Maps url", null=True, blank=True, max_length=5000)
     continent = models.ForeignKey(Continent, on_delete=models.CASCADE)
     
     def __str__(self):

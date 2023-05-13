@@ -12,7 +12,7 @@
     <div class="col-4 my-2 d-flex align-items-stretch bg-dark">
       <div class="card align-items-stretch bg-dark border-dark">
 <h3>Add a new country:</h3>
-<form action = "{% url 'add_country' continent.id %}" method="POST">
+<form action="{% url 'add_country' continent.id %}" method="POST" class="my-form">
     {% csrf_token %}
     {{ country_form.as_p }}
     <input type ="submit" class="btn" value = "Add a Country">

@@ -1,33 +1,16 @@
-/* body {
-  background-color: #2b2b2b;
-  color: #D82274;
-  color: #12399c;
+.my-form label {
+  color: #d82274;
 }
 
-.navbar {
-  background-color: #2b2b2b;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  color: #D82274;
-  background-color: #D82274;
+.my-form input[type="submit"] {
+  background-color: #d82274;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.navbar-brand {
-  color: #D82274;
+.my-form input[type="submit"]:hover {
+  background-color: #c31f67;
 }
-
-.navbar-nav .nav-link {
-  color: #D82274;
-}
-
-.page-footer {
-  background-color: #2b2b2b;
-  color: #D82274;
-}
-
-h1 {
-  margin-top: 80px !important;
-  color: #12399c;
-} */
