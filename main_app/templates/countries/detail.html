@@ -25,13 +25,14 @@
   </div>
 </div>
 
-{% for city in counrty.city_set.all %}
+
+{% for city in country.city_set.all %}
   {% if forloop.counter0|divisibleby:6 %}
     <div class="row mt-3">
   {% endif %}
   <div class="col-md-2">
     <div class="card bg-dark border-dark">
-      <a href="{% url 'city_detail' continent.id country.id %}">
+      <a href="{% url 'city_detail' city.id %}">
         <img class="card-img-top cont-img" src="{{ MEDIA_URL }}{{ city.image }}" alt="{{ country.name }} Flag">
         <div class="card-body text-center" style="color: #D82274; font-family: 'Bangers', cursive;">
           <h5 class="card-title">{{ city.name }}</h5>
