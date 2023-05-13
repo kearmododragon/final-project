@@ -15,7 +15,8 @@
       <span class="navbar-brand mb-0 h1" style="color: #d82274; font-family: 'Bangers', cursive;">
       <h3>Add a new city:</h3>
       </span>
-      <form method="POST" action="{% url 'add_city' continent_id country.id  %}">
+      <form action="{% url 'add_city' continent_id country.id  %}" method="POST" class="my-form">
+      <form>
         {% csrf_token %}
         {{ city_form.as_p }}
         <input type="submit" class="btn" value="Add a city">
