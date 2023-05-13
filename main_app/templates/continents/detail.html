@@ -11,7 +11,9 @@
   </div>
   <div class="col-md-8 my-2 d-flex align-items-stretch">
     <div class="card align-items-stretch bg-dark border-dark">
+      <span class="navbar-brand mb-0 h1" style="color: #d82274; font-family: 'Bangers', cursive;">
       <h3>Add a new country:</h3>
+      </span>
       <form action="{% url 'add_country' continent.id %}" method="POST" class="my-form">
         {% csrf_token %}
         {{ country_form.as_p }}
@@ -26,10 +28,12 @@
     <div class="row mt-3">
   {% endif %}
   <div class="col-md-2">
-    <div class="card">
+    <div class="card bg-dark border-dark">
       <a href="{% url 'countries_detail' continent.id country.id %}">
-        <td>{{ country.name }}</td>
-        <img class="cont-img" src="{{ MEDIA_URL }}{{ country.image }}">
+        <img class="card-img-top cont-img" src="{{ MEDIA_URL }}{{ country.image }}" alt="{{ country.name }} Flag">
+        <div class="card-body text-center" style="color: #D82274; font-family: 'Bangers', cursive;">
+          <h5 class="card-title">{{ country.name }}</h5>
+        </div>
       </a>
     </div>
   </div>
@@ -37,4 +41,5 @@
     </div>
   {% endif %}
 {% endfor %}
+
 {% endblock %}
