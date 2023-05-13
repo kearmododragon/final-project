@@ -8,8 +8,8 @@
             <span class="navbar-brand mb-0 h1" style="color: #d82274; font-family: 'Bangers', cursive;">{{ city.name }},
                 {{ city.country }}.</span>
             <img class="cont-img-detail" src="{{ MEDIA_URL }}{{ city.image }}">
-            <button type="button" class="btn"><a href="{% url 'cities_update' city.id %}">Edit</a></button>
-            <button type="button" class="btn"><a href="{% url 'cities_delete' city.id %}">delete</a></button>
+            <button type="submit" class="btn"><a href="{% url 'cities_update' city.id %}">Edit</a></button>
+            <button type="submit" class="btn"><a href="{% url 'cities_delete' city.id %}">delete</a></button>
         </div>
     </div>
 
