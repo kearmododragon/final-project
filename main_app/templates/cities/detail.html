@@ -7,10 +7,15 @@
         <div class="card align-items-stretch bg-dark border-dark">
             <span class="navbar-brand mb-0 h1" style="color: #d82274; font-family: 'Bangers', cursive;">{{ city.name }},
                 {{ city.country }}.</span>
-            <img class="cont-img-detail" src="{{ MEDIA_URL }}{{ city.image }}">
-            <button type="button" class="btn btn-edit"><a href="{% url 'cities_update' city.id %}">Edit</a></button>
-            <button type="button" class="btn"><a href="{% url 'cities_delete' city.id %}">delete</a></button>
+            <div class="d-flex justify-content-center">
+                <img class="cont-img-detail my-3" src="{{ MEDIA_URL }}{{ city.image }}">
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="button" class="btn btn-edit mx-2"><a href="{% url 'cities_update' city.id %}">Edit</a></button>
+                <button type="button" class="btn mx-2"><a href="{% url 'cities_delete' city.id %}">Delete</a></button>
+            </div>
         </div>
     </div>
+</div>
 
-    {% endblock %}
+{% endblock %}
