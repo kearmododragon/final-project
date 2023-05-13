@@ -8,14 +8,14 @@
         <div class="row no-gutters">
           <div class="col-md-7 d-flex align-items-center">
             <div class="card-body text-center">
-              <h1 class="card-title" style="color: #d82274; font-family: 'Bangers', cursive;">{{ city.name }}, {{ city.country }}</h1>
+              <h1 class="card-title" style="color: #d82274; font-family: 'Bangers', cursive;" href="{{city.mapsURL}}" target="_blank">{{ city.name }}, {{ city.country }}</h1>
             </div>
           </div>
           <div class="col-md-5">
             <img class="card-img" src="{{ MEDIA_URL }}{{ city.image }}" alt="{{ city.name }}">
           </div>
         </div>
-        <div class="card-footer d-flex justify-content-center">
+        <div class="card-footer d-flex justify-content-center bt-dark border-dark">
           <button type="button" class="btn btn-edit mx-2"><a href="{% url 'cities_update' city.id %}">Edit</a></button>
           <button type="button" class="btn btn-edit mx-2"><a href="{% url 'cities_delete' city.id %}">Delete</a></button>
         </div>
