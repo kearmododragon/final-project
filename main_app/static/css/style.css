@@ -14,3 +14,16 @@
 .my-form input[type="submit"]:hover {
   background-color: #c31f67;
 }
+
+.button{
+  background-color: #d82274;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover{
+  background-color: #c31f67;
+}
