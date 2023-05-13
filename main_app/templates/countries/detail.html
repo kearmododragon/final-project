@@ -1,33 +1,46 @@
 {% extends 'base.html' %}
 {% block content %}
 
-
-<h1> {{ country.name }}</h1>
-<img class="cont-img-detail" src="{{MEDIA_URL}}{{ country.image}}">
-<button class="btn">Edit</button>
-
-
-<h3>Add a new city:</h3>
-
-<form method="POST" action="{% url 'add_city' continent_id country.id  %}">
-  {% csrf_token %}
-  {{ city_form.as_p }}
-  <button type="submit" class="btn btn-primary">Add City</button>
-</form>
-
-
-<h1>Cities visited in {{ country.name }}:</h1>
-<ul>
-{% for city in country.city_set.all %}
-  <div class ="card">
-  <a href="{% url 'city_detail' city.id %}">
-      <td> {{ city.name }}</td>
-    <img class="cont-img" src="{{ MEDIA_URL }}{{ city.image }}">
-  </a>
+<div class="row mt-5 bg-dark p-4">
+  <div class="col-md-4 my-2 d-flex align-items-stretch">
+    <div class="card align-items-stretch bg-dark border-dark">
+      <span class="navbar-brand mb-0 h1" style="color: #d82274; font-family: 'Bangers', cursive;">{{ country.name }}</span>
+      <img class="cont-img-detail" src="{{ MEDIA_URL }}{{ country.image }}">
+      <button class="btn">Edit</button>
+    </div>
   </div>
-{% endfor %}
-</ul>
+  <div class="col-md-8 my-2 d-flex align-items-stretch">
+    <div class="card align-items-stretch bg-dark border-dark">
+      <span class="navbar-brand mb-0 h1" style="color: #d82274; font-family: 'Bangers', cursive;">
+      <h3>Add a new city:</h3>
+      </span>
+      <form method="POST" action="{% url 'add_city' continent_id country.id  %}">
+        {% csrf_token %}
+        {{ city_form.as_p }}
+        <input type="submit" class="btn" value="Add a city">
+      </form>
+    </div>
+  </div>
 </div>
+
+{% for city in county.cityy_set.all %}
+  {% if forloop.counter0|divisibleby:6 %}
+    <div class="row mt-3">
+  {% endif %}
+  <div class="col-md-2">
+    <div class="card bg-dark border-dark">
+      <a href="{% url 'city_detail' continent.id country.id %}">
+        <img class="card-img-top cont-img" src="{{ MEDIA_URL }}{{ city.image }}" alt="{{ country.name }} Flag">
+        <div class="card-body text-center" style="color: #D82274; font-family: 'Bangers', cursive;">
+          <h5 class="card-title">{{ city.name }}</h5>
+        </div>
+      </a>
+    </div>
+  </div>
+  {% if forloop.counter|divisibleby:6 or forloop.last %}
+    </div>
+  {% endif %}
+{% endfor %}
 
 
 {% endblock %}

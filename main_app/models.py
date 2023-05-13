@@ -14,7 +14,7 @@ class Continent(models.Model):
 
 class Country(models.Model):
     name = models.CharField("Country name:", unique=True, max_length=300)
-    image = models.URLField("URL image of the country", null=True, blank=True, max_length=5000)
+    image = models.URLField("URL image representing the country", null=True, blank=True, max_length=5000)
     mapsURL = models.URLField("Maps url", null=True, blank=True, max_length=5000)
     continent = models.ForeignKey(Continent, on_delete=models.CASCADE)
     
