@@ -1,6 +1,6 @@
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Continent, Country, City, Holiday, Event 
 from .forms import CountryForm
 from .forms import CityForm 
@@ -66,13 +66,19 @@ def continents_detail(request, continent_id):
     })
 
 def add_country(request, continent_id):
-    form = CountryForm(request.POST)
-    if form.is_valid():
-      new_country = form.save(commit=False)
-      new_country.continent_id = continent_id
-      new_country.save()
-      print(new_country.id)
-    return redirect("detail", continent_id = continent_id)
+    if request.method == 'POST':
+        form = CountryForm(request.POST)
+        if form.is_valid():
+            continent_name = request.POST.get('continent_name')
+            new_country = form.save(commit=False)
+            continent = get_object_or_404(Continent, id=continent_id, name=continent_name)
+            new_country.continent = continent
+            new_country.save()
+            return redirect('detail', continent_id=continent_id)
+    else:
+        form = CountryForm()
+    return render(request, 'add_country.html', {'form': form})
+
 
 def countries_index(request):
     countries=Country.objects.all()
