@@ -1,6 +1,6 @@
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Continent, Country, City, Holiday, Event 
 from .forms import CountryForm
 from .forms import CityForm 
@@ -8,6 +8,8 @@ from .forms import HolidayForm
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 import requests
+from django.urls import reverse
+
 
 
 def home(request):
