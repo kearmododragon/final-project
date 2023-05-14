@@ -3,8 +3,9 @@
 {% load static %}
 
   <h1>Delete {{city.name}}</h1>
-
+<span style="color: #D82274; font-family: 'Bangers', cursive;">
   <h4>Are you sure you want to delete <span class="teal-text">{{ city.name }}</span>?</h4>
+</span>
 
   <form action="" method="POST">
     {% csrf_token %}
