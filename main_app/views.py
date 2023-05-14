@@ -98,7 +98,7 @@ def countries_detail(request, continent_id, country_id):
 
 class CountryUpdate(UpdateView):
     model = Country 
-    fields = ["name"]
+    fields = ['name', 'image', "mapsURL",]
     template_name = 'countries/country_form.html'
     success_url = '/locations'
 
