@@ -97,13 +97,10 @@ def countries_detail(request, continent_id, country_id):
     })
 
 class CountryUpdate(UpdateView):
-   model = Country 
-   fields = ["name"]
-   template_name = 'countries/country_form.html'
-
-   def get_success_url(self):
-        country = self.object
-        return reverse('countries_detail', args=[country.id, country.continent_id])
+    model = Country 
+    fields = ["name"]
+    template_name = 'countries/country_form.html'
+    success_url = '/locations'
 
 def add_city(request, country_id, continent_id):
     form = CityForm(request.POST)
