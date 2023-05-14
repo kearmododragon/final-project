@@ -18,7 +18,7 @@ urlpatterns =[
     path('countries/', views.countries_index, name="countries_all"),
     path('locations/<int:continent_id>/add_country/', views.add_country, name='add_country'),
     path('locations/<int:continent_id>/<int:country_id>/', views.countries_detail, name='countries_detail'),
-    path('countries/<int:country_id>/update/', views.CountryUpdate.as_view(), name ="country_update"),
+    path('countries/<int:pk>/update/', views.CountryUpdate.as_view(), name ="country_update"),
 
 
     path('locations/<int:continent_id>/<int:country_id>/add_city/', views.add_city, name='add_city'),
