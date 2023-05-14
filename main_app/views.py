@@ -121,7 +121,7 @@ def city_detail(request, city_id):
 
 class CityUpdate(UpdateView):
    model = City 
-   fields = ["name"]
+   fields = ["name", "image", "mapsURL",]
    template_name = 'cities/city_form.html'
    success_url = '/locations'
    
