@@ -2,13 +2,16 @@
 {% block content %}
 {% load static %}
 
-<h1>signup</h1>
+<div class="row justify-content-center mt-5">
+  <div class="col-md-6">
+    <h1 style="color: #d82274; font-family: 'Bangers', cursive;">Signup</h1>
+    <p class="red-text">{{ error_message }}</p>
+    <form method="POST" action="{% url 'signup' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" name="text" value="Sign Up" class="btn btn-primary mt-2">
+    </form>
+  </div>
+</div>
 
-<p class="red-text">{{ error_message }}</p>
-<form method="POST" action="{% url 'signup' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" name="text" value="Sign Up">
-
-</form>
 {% endblock %}
