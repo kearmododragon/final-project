@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 from datetime import date
 from django.contrib.auth.models import User
+from django.forms import ModelMultipleChoiceField
 
 
 # Create your models here.
@@ -36,7 +37,7 @@ class Holiday(models.Model):
     name = models.CharField(max_length=100,  default="holiday")
     arrivalDate = models.DateField("Left home", auto_now=True)
     deparureDate = models.DateField("Returned", auto_now=True)
-    city = models.ForeignKey(City, on_delete=models.CASCADE)
+    cities = ModelMultipleChoiceField(queryset=City.objects.all())
     companions = models.CharField(max_length=1000,  default="friend") 
         
     def __str__(self):

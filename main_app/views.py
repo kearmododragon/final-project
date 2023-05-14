@@ -30,12 +30,17 @@ def holiday_detail(request):
    return render(request)
 
 def add_holiday(request, location_id):
-   form = HolidayForm(request.POST)
-   if form.is_valid():
-      new_holiday = form.save(commit=False)
-      new_holiday.location_id = location_id
-      new_holiday.save()
-   return redirect("detail", location_id = location_id)
+    form = HolidayForm(request.POST)
+    if form.is_valid():
+        cities = form.cleaned_data['cities']
+        for city in cities:
+            new_holiday = form.save(commit=False)
+            new_holiday.location_id = location_id
+            new_holiday.city = city
+            new_holiday.save()
+        return redirect("detail", location_id=location_id)
+    return render(request, "add_holiday.html", {"form": form})
+
 
 def events_index(request):
    events = Event.objects.all()
