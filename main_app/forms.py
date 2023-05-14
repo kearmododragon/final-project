@@ -14,4 +14,4 @@ class CityForm(ModelForm):
 class HolidayForm(ModelForm):
   class Meta:
     model = Holiday
-    fields =["name", "cities", "companions",]
+    fields =["name", "city", "companions",]
