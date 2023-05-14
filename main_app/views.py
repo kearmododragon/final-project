@@ -103,7 +103,6 @@ class CountryUpdate(UpdateView):
         country = self.object
         return reverse('countries_detail', args=[country.id, country.continent_id])
 
-
 def add_city(request, country_id, continent_id):
     form = CityForm(request.POST)
     if form.is_valid():
@@ -169,11 +168,3 @@ def login_view(request):
         form = AuthenticationForm()
     context = {'form': form}
     return render(request, 'registration/login.html', context)
-
-class CountryUpdate(UpdateView):
-   model = Country
-   fields = ['name']
-
-class CountryDelete(DeleteView):
-   model = Country
-   success_url = '/locations/continents'
