@@ -4,18 +4,16 @@
 
 <div class="row mt-5 bg-dark p-4">
   <div class="col-md-4 my-2 d-flex align-items-stretch">
-    <div class="card align-items-stretch bg-dark border-dark">
-      <span class="navbar-brand mb-0 h1" style="color: #d82274; font-family: 'Bangers', cursive;">{{ country.name }}</span>
-      <a href="{{ country.mapsURL }}" target="_blank" style="text-decoration: none; cursor: pointer;">
-        <img class="cont-img-detail" src="{{ MEDIA_URL }}{{ country.image }}">
-      </a>
+    <div class="card align-items-stretch bg-dark border-dark" >
+      <span class="navbar-brand mb-0 h1" style="color: #d82274; font-family: 'Bangers', cursive;" href="{{ country.mapsURL }}" target="_blank" >{{ country.name }}</span>
+      <img class="cont-img-detail" src="{{ MEDIA_URL }}{{ country.image }}">
       <button type="button" class="btn btn-edit mx-2"><a href="{% url 'country_update' country.id %}">Edit</a></button>
     </div>
   </div>
   <div class="col-md-8 my-2 d-flex align-items-stretch">
     <div class="card align-items-stretch bg-dark border-dark">
       <span class="navbar-brand mb-0 h1" style="color: #d82274; font-family: 'Bangers', cursive;">
-        <h3>Add a new city:</h3>
+      <h3>Add a new city:</h3>
       </span>
       <form action="{% url 'add_city' continent_id country.id  %}" method="POST" class="my-form">
       <form>
@@ -26,8 +24,6 @@
     </div>
   </div>
 </div>
-
-
 
 
 {% for city in country.city_set.all %}
