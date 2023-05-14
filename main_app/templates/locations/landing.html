@@ -4,22 +4,27 @@
 
 <div class="bg-dark">
 
-<h1>Locations</h1>
+  <h1>Locations</h1>
 
   <div class="d-flex justify-content-center">
     <div class="btn-group my-5">
-      <button type="button" class="btn btn-outline-primary mx-2"><a class="link" href="countries/" style="color: black;">Countries</a></button>
-      <button type="button" class="btn btn-outline-primary mx-2"><a class="link" href="cities/" style="color: black;">Cities</a></button>
+      <button type="button" class="btn btn-outline-primary mx-2"><a class="link" href="countries/"
+          style="color: black;">Countries</a></button>
+      <button type="button" class="btn btn-outline-primary mx-2"><a class="link" href="cities/"
+          style="color: black;">Cities</a></button>
     </div>
   </div>
-  
+
 
   <div class="row justify-content-center bg-transparent">
     <div class="row justify-content-center">
       <div class="col-sm-2">
-        <a href="{% url 'landing' continent.id %}">
-          <img class="cont-img" src="{{MEDIA_URL}}{{ continent.image }}" alt ="North America" class="img-thumbnail bg-transparent border-dark">
+        {% if continent.id %}
+        <a href="{% url 'landing' continent.id %}">Link to Continent</a>
+        {% endif %}
+        <img class="cont-img" src="{{MEDIA_URL}}{{ continent.image }}" alt="North America"
+          class="img-thumbnail bg-transparent border-dark">
         </a>
       </div>
 
-{% endblock %}
+      {% endblock %}
