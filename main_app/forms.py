@@ -9,7 +9,7 @@ class CountryForm(ModelForm):
 class CityForm(ModelForm):
   class Meta:
     model = City
-    fields = ["name", "image", "mapsURL", "country", "continent",]
+    fields = ["name", "image", "mapsURL",]
 
 class HolidayForm(ModelForm):
   class Meta:

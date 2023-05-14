@@ -100,11 +100,12 @@ def add_city(request, country_id, continent_id):
     if form.is_valid():
         new_city = form.save(commit=False)
         new_city.country_id = country_id
-        new_city.continenet_id = continent_id
+        new_city.continent_id = continent_id
         new_city.save()
         city = new_city
         print(city.id)
-    return redirect("countries_detail", country_id = country_id, continent_id = continent_id)
+    return redirect("countries_detail", country_id=country_id, continent_id=continent_id)
+
 
 def cities_index(request):
     cities = City.objects.all()
