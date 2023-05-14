@@ -17,8 +17,8 @@
   <div class="row justify-content-center bg-transparent">
     <div class="row justify-content-center">
       <div class="col-sm-2">
-        <a href="/locations/5">
-        <img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Location_North_America.svg/1200px-Location_North_America.svg.png" alt ="North America" class="img-thumbnail bg-transparent border-dark">
+        <a href="{% url 'detail' continent.id %}">
+          <img class="cont-img" src="{{MEDIA_URL}}{{ continent.image }}" alt ="North America" class="img-thumbnail bg-transparent border-dark">
         </a>
       </div>
 
