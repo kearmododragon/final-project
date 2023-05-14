@@ -52,13 +52,6 @@ def locations_landing(request):
         "countries": countries,
     })
 
-def continents_index(request):
-    continents = Continent.objects.all()
-    return render(request, 'continents/index.html',{
-     "continents": continents  
-    } 
-)
-
 def continents_detail(request, continent_id):
     continent = Continent.objects.get(id=continent_id)
     country_form = CountryForm()

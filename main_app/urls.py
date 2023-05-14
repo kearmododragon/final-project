@@ -12,7 +12,6 @@ urlpatterns =[
 
     path('locations/', views.locations_landing, name='landing'),
     
-    path('locations/continents/', views.continents_index, name='index'),
     path('locations/<int:continent_id>/', views.continents_detail, name='detail'),
 
     path('countries/', views.countries_index, name="countries_all"),
