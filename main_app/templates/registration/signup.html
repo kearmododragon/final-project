@@ -3,10 +3,10 @@
 {% load static %}
 
 <div class="row justify-content-center mt-5">
-  <div class="col-md-6">
+  <div class="col-md-6 mt-5">
     <h1 style="color: #d82274; font-family: 'Bangers', cursive;">Signup</h1>
     <p class="red-text">{{ error_message }}</p>
-    <form method="POST" action="{% url 'signup' %}">
+    <form method="POST" action="{% url 'signup' %}"style="color: #d82274; font-family: 'Bangers', cursive;">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" name="text" value="Sign Up" class="btn btn-primary mt-2">
