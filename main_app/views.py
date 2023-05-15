@@ -27,13 +27,14 @@ def holidays_index(request):
 def holiday_detail(request):
    return render(request)
 
-def add_holiday(request, location_id):
-   form = HolidayForm(request.POST)
-   if form.is_valid():
-      new_holiday = form.save(commit=False)
-      new_holiday.location_id = location_id
-      new_holiday.save()
-   return redirect("detail", location_id = location_id)
+def add_holiday(request):
+    form = HolidayForm(request.POST)
+    if form.is_valid():
+        new_holiday = form.save(commit=False)
+        # Perform any necessary operations with the new_holiday
+        new_holiday.save()
+    return redirect("detail", location_id=new_holiday.location_id)  # Replace `new_holiday.location_id` with the appropriate value for redirecting to the desired location detail page
+
 
 def events_index(request):
    events = Event.objects.all()
