@@ -2,7 +2,7 @@
 {% block content %}
 {% load static %}
 <div class="container-fluid bg-dark ml-0">
-  <h1>Welcome to Competitive Holidaying</h1>
+  <h1 style="color: #d82274; font-family: 'Bangers', cursive;">Welcome to Competitive Holidaying</h1>
 {% if user.is_authenticated %}
   <div class="row mt-5 bg-light p-4">
     <div class="col-4 my-2 d-flex align-items-stretch">
@@ -33,7 +33,10 @@
 {% else %}
 
   <div style="color: #d82274; font-family: 'Bangers', cursive;">
-    <p>You've seen competitive sports. You've heard of competitive tag. There have been countless stereotypes on competitive spelling. Well, let's make holidays competitive.</p>
+    <p>You've seen competitive sports. You've heard of competitive tag. There have been countless stereotypes on competitive spelling. Well, let's make holidays competitive. 
+
+      But first, please sign up or log in.
+    </p>
   </div>
   <div class="container-fluid bg-dark ml-0">
     <h1>Welcome to Competitive Holidaying</h1>
