@@ -28,13 +28,13 @@
                 <ul class ="navbar-nav">
                     {% if user.is_authenticated %}
                         <li class ="nav-item active">
-                            <a href="{% url 'holidays' %}" class="nav-link active">Holidays</a>
-                        </li>
-                        <li class ="nav-item active">
                             <a href="{% url 'landing' %}" class="nav-link active">Locations</a>
                         </li>
                         <li class ="nav-item active">
                             <a href="{% url 'events-index' %}" class="nav-link active">Events</a>
+                        </li>
+                        <li class ="nav-item active">
+                            <a href="{% url 'holidays' %}" class="nav-link active">Holidays</a>
                         </li>
                         <li class ="nav-item active">
                             <a href="{% url 'logout' %}" class="nav-link active">Log Out</a>
