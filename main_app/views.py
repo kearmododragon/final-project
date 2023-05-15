@@ -118,10 +118,8 @@ def add_city(request, country_id, continent_id):
 
 def city_detail(request, city_id):
    city = City.objects.get(id=city_id)
-   holidays = city.holiday_set.all()
    return render(request, 'cities/detail.html',{
       "city": city,
-      "holidays": holidays
    })
 
 class CityUpdate(UpdateView):
