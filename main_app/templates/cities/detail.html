@@ -31,16 +31,5 @@
   </div>
 </div>
 
-<h1>{{ city.name }} Holidays</h1>
-
-{% if holidays %}
-  <ul>
-    {% for holiday in holidays %}
-      <li>{{ holiday.name }}</li>
-    {% endfor %}
-  </ul>
-{% else %}
-  <p>No holidays found for this city.</p>
-{% endif %}
 
 {% endblock %}
