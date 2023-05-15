@@ -2,10 +2,26 @@
 {% block content %}
 {% load static %}
 
+<h1 class="mt-5 bg-dark" style="color: #d82274; font-family: 'Bangers', cursive;">Holidays</h1>
 
-<h1 class="mt-5" style="color: #d82274; font-family: 'Bangers', cursive;"></h1>>Holidays</h1>
-  {% for holiday in holidays %}
+<div class="row">
   <div class="col-md-8 my-2 d-flex align-items-stretch">
+    <div class="card align-items-stretch bg-dark border-dark">
+      <span class="navbar-brand mb-0 h1" style="color: #d82274; font-family: 'Bangers', cursive;">
+        <h3>Add a new holiday:</h3>
+      </span>
+      <form action="{% url 'add_holiday' %}" method="POST" class="my-form">
+        {% csrf_token %}
+        {{ holiday_form.as_p }}
+        <input type="submit" class="btn" value="Add a city">
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  {% for holiday in holidays %}
+  <div class="col-md-4 my-2">
     <div class="card align-items-stretch bg-dark border-dark">
       <a href="{% url 'holiday_detail' holiday.id %}" style="text-decoration: none; color: inherit;">
         <div class="card-content">
@@ -18,20 +34,7 @@
       </a>
     </div>
   </div>
-</div>
-{% endfor %}
-<div class="col-md-8 my-2 d-flex align-items-stretch">
-  <div class="card align-items-stretch bg-dark border-dark">
-    <span class="navbar-brand mb-0 h1" style="color: #d82274; font-family: 'Bangers', cursive;">
-    <h3>Add a new holiday:</h3>
-    </span>
-    <form action="{% url 'add_holiday' %}" method="POST" class="my-form">
-      <form>
-      {% csrf_token %}
-      {{ holiday_form.as_p }}
-      <input type="submit" class="btn" value="Add a city">
-    </form>
-  </div>
+  {% endfor %}
 </div>
 
 {% endblock %}
