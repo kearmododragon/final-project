@@ -26,8 +26,11 @@ def holidays_index(request):
         "holiday_form": holiday_form,
     })
 
-def holiday_detail(request):
-   return render(request)
+def holiday_detail(request, holiday_id):
+    holidays=Holiday.objects.all()
+    return render(request, 'countries/detail.html', {
+        "holidays": holidays,
+    })
 
 def add_holiday(request):
     if request.method == 'POST':
