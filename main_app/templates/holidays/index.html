@@ -6,17 +6,20 @@
 <h1>Holidays</h1>
 
 {% for holiday in holidays %}
-<div class="card">
-    <a href="{% url 'holiday_detail' holiday.id %}"></a>
+<div class="col-md-8 my-2 d-flex align-items-stretch">
+  <div class="card align-items-stretch bg-dark border-dark">
+    <a href="{% url 'holiday_detail' holiday.id %}">
+      <span class="navbar-brand mb-0 h1" style="color: #d82274; font-family: 'Bangers', cursive;">
       <div class="card-content">
-          <span class="card-title">{{ holiday.name }}</span>
-          <span class="card-title">{{ holiday.city }}</span>
-          <span class="card-title">{{ holiday.companions }}</span>
+          <span class="card-title">Title: {{ holiday.name }}</span>
+          <span class="card-title">I went to: {{ holiday.city }}</span>
+          <span class="card-title">I went with: {{ holiday.companions }}</span>
+        </span>
       </div>
+    </div>
     </a>
 </div>
 {% endfor %}
-
 
 
 
