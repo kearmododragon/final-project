@@ -7,6 +7,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 import requests
 from django.urls import reverse
+from django.shortcuts import render
 
 
 
@@ -31,9 +32,8 @@ def add_holiday(request):
     form = HolidayForm(request.POST)
     if form.is_valid():
         new_holiday = form.save(commit=False)
-        # Perform any necessary operations with the new_holiday
         new_holiday.save()
-    return redirect("detail", location_id=new_holiday.location_id)  # Replace `new_holiday.location_id` with the appropriate value for redirecting to the desired location detail page
+    return render(request, 'holiday_form.html', {'form': form})
 
 
 def events_index(request):
