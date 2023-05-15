@@ -4,7 +4,15 @@
 
 <h1>Events</h1>
 
-
+{% for event in events %}
+<div class="card">
+  <a href="{% url 'ebent_detail' event.id %}"></a>
+      <div class="card-content">
+          <span class="card-title">{{ event.name }}</span>
+      </div>
+    </a>
+</div>
+{% endfor %}
 
 
 {% endblock %}
