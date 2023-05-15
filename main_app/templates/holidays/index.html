@@ -9,8 +9,14 @@
     <div class="card align-items-stretch bg-dark border-dark">
       <span class="navbar-brand mb-0 h1" style="color: #d82274; font-family: 'Bangers', cursive;">
         <h3>Add a new holiday:</h3>
+        <form action="{% url 'add_holiday' %}" method="POST" class="my-form">
+          <form>
+            {% csrf_token %}
+            {{ holiday_form.as_p }}
+            <input type="submit" class="btn" value="Add a holiday">
+          </form>
+          </form>
       </span>
-      {% include 'holiday_form.html' %}
     </div>
   </div>
 </div>
