@@ -28,7 +28,7 @@ def holidays_index(request):
 
 def holiday_detail(request, holiday_id):
     holidays=Holiday.objects.all()
-    return render(request, 'countries/detail.html', {
+    return render(request, 'holidays/detail.html', {
         "holidays": holidays,
     })
 
