@@ -20,8 +20,10 @@ def home(request):
 
 def holidays_index(request):
     holidays = Holiday.objects.all()
+    holiday_form = HolidayForm()
     return render(request, 'holidays/index.html',{
-       "holidays" : holidays
+       "holidays" : holidays,
+        "holiday_form": holiday_form,
     })
 
 def holiday_detail(request):
@@ -75,7 +77,9 @@ def add_country(request, continent_id):
             return redirect('detail', continent_id=continent_id)
     else:
         form = CountryForm()
-    return render(request, 'add_country.html', {'form': form})
+    return render(request, 'add_country.html', {
+        'form': form
+        })
 
 def countries_index(request):
     countries=Country.objects.all()
