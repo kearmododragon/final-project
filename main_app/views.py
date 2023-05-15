@@ -28,7 +28,7 @@ def holidays_index(request):
 
 def holiday_detail(request, holiday_id):
     holidays=Holiday.objects.all()
-    return render(request, 'holidays/index.html', {
+    return render(request, 'holidays/detail.html', {
         "holidays": holidays,
     })
 
@@ -115,6 +115,13 @@ def add_city(request, country_id, continent_id):
         city = new_city
         print(city.id)
     return redirect("countries_detail", country_id=country_id, continent_id=continent_id)
+
+def cities_index(request):
+    cities = City.objects.all()
+    return render(request, 'cities/index.html',{
+     "cities": cities  
+    } 
+)
 
 def city_detail(request, city_id):
    city = City.objects.get(id=city_id)
