@@ -36,7 +36,7 @@ def add_holiday(request):
     else:
         form = HolidayForm()
     return render(request, 'holiday_form.html', {
-        'holiday_form': form
+        'form': form
         })
 
 
