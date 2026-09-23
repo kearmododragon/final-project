@@ -24,8 +24,6 @@ urlpatterns =[
     path('cities/<int:city_id>/', views.city_detail, name='city_detail'),
     path('cities/<int:pk>/update/', views.CityUpdate.as_view(), name="cities_update"),
     path('cities/<int:pk>/delete/', views.CityDelete.as_view(), name="cities_delete"),
-    path('cities/', views.cities_index, name='index'),
-
     path('accounts/login/', views.login_view, name='login'),
     path('accounts/signup/', views.signup, name='signup'),
 ]

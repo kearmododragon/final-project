@@ -13,9 +13,18 @@ from django.urls import reverse
 def home(request):
     url = 'https://api.exchangerate.host/latest'
     currencies_to_display = ['USD', 'GBP', 'JPY']
-    response = requests.get(url)
-    data = response.json()
-    rates = {currency: rate for currency, rate in data['rates'].items() if currency in currencies_to_display}
+
+    try:
+        response = requests.get(url)
+        data = response.json()
+        rates = {
+            currency: rate
+            for currency, rate in data.get('rates', {}).items()
+            if currency in currencies_to_display
+        }
+    except (requests.RequestException, ValueError):
+        rates = {}
+
     return render(request, 'home.html', {'rates': rates})
 
 def holidays_index(request):
@@ -28,7 +37,7 @@ def holidays_index(request):
 
 def holiday_detail(request, holiday_id):
     holidays=Holiday.objects.all()
-    return render(request, 'holidays/detail.html', {
+    return render(request, 'holidays/index.html', {
         "holidays": holidays,
     })
 
@@ -43,7 +52,6 @@ def add_holiday(request):
     return render(request, 'holiday_form.html', {
         'form': form
         })
-
 
 def events_index(request):
    events = Event.objects.all()
@@ -115,13 +123,6 @@ def add_city(request, country_id, continent_id):
         city = new_city
         print(city.id)
     return redirect("countries_detail", country_id=country_id, continent_id=continent_id)
-
-def cities_index(request):
-    cities = City.objects.all()
-    return render(request, 'cities/index.html',{
-     "cities": cities  
-    } 
-)
 
 def city_detail(request, city_id):
    city = City.objects.get(id=city_id)
