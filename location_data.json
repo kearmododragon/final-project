@@ -1,0 +1,301 @@
+[
+  {
+    "model": "main_app.continent",
+    "pk": 1,
+    "fields": {
+      "name": "Africa",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Africa_%28orthographic_projection%29.svg/640px-Africa_%28orthographic_projection%29.svg.png"
+    }
+  },
+  {
+    "model": "main_app.continent",
+    "pk": 2,
+    "fields": {
+      "name": "Asia",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Asia_%28orthographic_projection%29.svg/1200px-Asia_%28orthographic_projection%29.svg.png"
+    }
+  },
+  {
+    "model": "main_app.continent",
+    "pk": 3,
+    "fields": {
+      "name": "Europe",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Europe_orthographic_Caucasus_Urals_boundary_%28with_borders%29.svg/1200px-Europe_orthographic_Caucasus_Urals_boundary_%28with_borders%29.svg.png"
+    }
+  },
+  {
+    "model": "main_app.continent",
+    "pk": 4,
+    "fields": {
+      "name": "Oceana",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Oceania_%28centered_orthographic_projection%29.svg/1200px-Oceania_%28centered_orthographic_projection%29.svg.png"
+    }
+  },
+  {
+    "model": "main_app.continent",
+    "pk": 5,
+    "fields": {
+      "name": "North America",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Location_North_America.svg/1200px-Location_North_America.svg.png"
+    }
+  },
+  {
+    "model": "main_app.continent",
+    "pk": 6,
+    "fields": {
+      "name": "South America",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/South_America_%28orthographic_projection%29.svg/1200px-South_America_%28orthographic_projection%29.svg.png"
+    }
+  },
+  {
+    "model": "main_app.continent",
+    "pk": 7,
+    "fields": {
+      "name": "Antartica",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Antarctica_%28orthographic_projection%29.svg/1200px-Antarctica_%28orthographic_projection%29.svg.png"
+    }
+  },
+  {
+    "model": "main_app.country",
+    "pk": 1,
+    "fields": {
+      "name": "Morocco",
+      "image": "https://cdn.britannica.com/13/183713-050-10FFC97F/World-Data-Locator-Map-Morocco.jpg",
+      "mapsURL": "https://goo.gl/maps/DnFrAptqSxcSztZX6",
+      "continent": 1
+    }
+  },
+  {
+    "model": "main_app.country",
+    "pk": 2,
+    "fields": {
+      "name": "Taiwan",
+      "image": "https://cdn.britannica.com/70/183770-050-4DEF88AF/Taipei-tip-Taiwan-island.jpg",
+      "mapsURL": "https://goo.gl/maps/gF3uzQMusCFE4EAUA",
+      "continent": 2
+    }
+  },
+  {
+    "model": "main_app.country",
+    "pk": 3,
+    "fields": {
+      "name": "England",
+      "image": "https://cdn.britannica.com/67/195467-050-B37F8D12/Locator-map-England.jpg",
+      "mapsURL": "https://goo.gl/maps/aQrMoMjRiz2W6SL18",
+      "continent": 3
+    }
+  },
+  {
+    "model": "main_app.country",
+    "pk": 4,
+    "fields": {
+      "name": "Canada",
+      "image": "https://cdn.britannica.com/10/183610-050-07053EDD/World-Data-Locator-Map-Canada.jpg",
+      "mapsURL": "https://goo.gl/maps/bPm9SkQauSAWj24H6",
+      "continent": 5
+    }
+  },
+  {
+    "model": "main_app.country",
+    "pk": 5,
+    "fields": {
+      "name": "Brazil",
+      "image": "https://cdn.britannica.com/50/6850-050-28FBB850/Brazil-map-features-locator.jpg",
+      "mapsURL": "https://goo.gl/maps/8npZcnbFxawNjtF5A",
+      "continent": 6
+    }
+  },
+  {
+    "model": "main_app.country",
+    "pk": 6,
+    "fields": {
+      "name": "USA",
+      "image": "https://cdn.britannica.com/85/183785-050-77A0FDB5/The-United-States.jpg",
+      "mapsURL": "https://goo.gl/maps/gTsR4j4229cuc2oa6",
+      "continent": 5
+    }
+  },
+  {
+    "model": "main_app.country",
+    "pk": 7,
+    "fields": {
+      "name": "France",
+      "image": "https://cdn.britannica.com/42/183642-050-C7D21FE8/World-Data-Locator-Map-France.jpg",
+      "mapsURL": "https://goo.gl/maps/Fn3hwUebustHwkxi6",
+      "continent": 3
+    }
+  },
+  {
+    "model": "main_app.country",
+    "pk": 8,
+    "fields": {
+      "name": "Spain",
+      "image": "https://cdn.britannica.com/61/183761-050-F02B165E/World-Data-Locator-Map-Spain.jpg",
+      "mapsURL": "https://goo.gl/maps/9gBuRoMhrF3TvZfG9",
+      "continent": 3
+    }
+  },
+  {
+    "model": "main_app.country",
+    "pk": 9,
+    "fields": {
+      "name": "Indonesia",
+      "image": "https://cdn.britannica.com/66/183666-050-A509049A/World-Data-Locator-Map-Indonesia.jpg",
+      "mapsURL": "https://goo.gl/maps/mNDTS4ZhRcQqJYgB8",
+      "continent": 2
+    }
+  },
+  {
+    "model": "main_app.country",
+    "pk": 10,
+    "fields": {
+      "name": "Netherlands",
+      "image": "https://cdn.britannica.com/19/183719-050-F9C1688D/World-Data-Locator-Map-Netherlands.jpg?w=300&h=169&c=crop",
+      "mapsURL": "https://goo.gl/maps/4HTBx9qctXRtHAzN6",
+      "continent": 3
+    }
+  },
+  {
+    "model": "main_app.city",
+    "pk": 2,
+    "fields": {
+      "name": "Taiwan",
+      "image": "https://cdn.britannica.com/14/130914-050-3288D3B0/Taipei-101-building-Taiwan.jpg",
+      "country": 2,
+      "continent": 2,
+      "mapsURL": "https://goo.gl/maps/gF3uzQMusCFE4EAUA"
+    }
+  },
+  {
+    "model": "main_app.city",
+    "pk": 3,
+    "fields": {
+      "name": "Manchester",
+      "image": "https://dd20lazkioz9n.cloudfront.net/wp-content/uploads/2022/03/Copy-of-WP-News-story-template-2022-03-15T093911.099.jpg",
+      "country": 3,
+      "continent": 3,
+      "mapsURL": "https://goo.gl/maps/HRb7feY8zrJwHRhA9"
+    }
+  },
+  {
+    "model": "main_app.city",
+    "pk": 4,
+    "fields": {
+      "name": "Toronto",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/Toronto_Skyline_Summer_2020.jpg",
+      "country": 4,
+      "continent": 5,
+      "mapsURL": "https://goo.gl/maps/4Bf5edmdFgiWdydW8"
+    }
+  },
+  {
+    "model": "main_app.city",
+    "pk": 5,
+    "fields": {
+      "name": "Rio de Janeiro",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Cidade_Maravilhosa.jpg/1200px-Cidade_Maravilhosa.jpg",
+      "country": 5,
+      "continent": 6,
+      "mapsURL": "https://goo.gl/maps/GAzGipx5GKkpbzDi8"
+    }
+  },
+  {
+    "model": "main_app.city",
+    "pk": 9,
+    "fields": {
+      "name": "London",
+      "image": "https://assets.editorial.aetnd.com/uploads/2019/03/topic-london-gettyimages-760251843-feature.jpg",
+      "country": 3,
+      "continent": 3,
+      "mapsURL": "https://www.google.nl/maps/place/London/@51.528607,-0.4312251,10z/data=!3m1!4b1!4m6!3m5!1s0x47d8a00baf21de75:0x52963a5addd52a99!8m2!3d51.5072178!4d-0.1275862!16zL20vMDRqcGw"
+    }
+  },
+  {
+    "model": "main_app.city",
+    "pk": 10,
+    "fields": {
+      "name": "Nottingham",
+      "image": "https://a.cdn-hotels.com/gdcs/production83/d154/fc3fc349-9e97-469e-af42-eea0955c32a0.jpg",
+      "country": 3,
+      "continent": 3,
+      "mapsURL": "https://goo.gl/maps/wAwTKLT2k1X8V2gY9"
+    }
+  },
+  {
+    "model": "main_app.city",
+    "pk": 15,
+    "fields": {
+      "name": "Derby",
+      "image": "https://www.ucas.com/sites/default/files/derby_peak_position.jpg",
+      "country": 3,
+      "continent": 3,
+      "mapsURL": "https://goo.gl/maps/xod7nVXr5M2istiy5"
+    }
+  },
+  {
+    "model": "main_app.city",
+    "pk": 16,
+    "fields": {
+      "name": "Barcelona",
+      "image": "https://static.independent.co.uk/2023/03/10/14/iStock-1320014700.jpg",
+      "country": 8,
+      "continent": 3,
+      "mapsURL": "https://api.time.com/wp-content/uploads/2023/03/Worlds-Greatest-Places-Barcelona-Spain.jpg"
+    }
+  },
+  {
+    "model": "main_app.city",
+    "pk": 23,
+    "fields": {
+      "name": "Ubud",
+      "image": "https://a.cdn-hotels.com/gdcs/production52/d1097/1467a700-7195-4ca5-9ac4-c34ac49e6650.jpg",
+      "country": 9,
+      "continent": 2,
+      "mapsURL": "https://goo.gl/maps/awG1tsTzVkfZkssA7"
+    }
+  },
+  {
+    "model": "main_app.city",
+    "pk": 24,
+    "fields": {
+      "name": "Merzouga",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Merzouga%2C_Morocco.jpg",
+      "country": 1,
+      "continent": 1,
+      "mapsURL": "https://goo.gl/maps/VLSfkCs6jQhgr1Kd8"
+    }
+  },
+  {
+    "model": "main_app.city",
+    "pk": 25,
+    "fields": {
+      "name": "Marrakech",
+      "image": "https://media.gq-magazine.co.uk/photos/5d138f50976fa31476f39436/master/w_1920,h_1280,c_limit/marrakech-gq-9oct18_istock_b.jpg",
+      "country": 1,
+      "continent": 1,
+      "mapsURL": "https://goo.gl/maps/VnGLGpp2H1xX9aFb8"
+    }
+  },
+  {
+    "model": "main_app.city",
+    "pk": 26,
+    "fields": {
+      "name": "Liverpool",
+      "image": "https://i2-prod.liverpoolecho.co.uk/incoming/article10110991.ece/ALTERNATES/s1200b/0_JS72834296.jpg",
+      "country": 3,
+      "continent": 3,
+      "mapsURL": "https://goo.gl/maps/rdFh3CJ7dudJUVBF7"
+    }
+  },
+  {
+    "model": "main_app.city",
+    "pk": 33,
+    "fields": {
+      "name": "Maastricht",
+      "image": "https://www.holland.com/upload_mm/d/f/c/69557_fullimage_sint-servaas-brug-maas-maastricht-stad-eighty8things-1360%20copy.jpg",
+      "country": 10,
+      "continent": 3,
+      "mapsURL": "https://goo.gl/maps/VLm5KXsqaQSoaEcV8"
+    }
+  }
+]
